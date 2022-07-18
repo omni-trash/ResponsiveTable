@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive Table</title>
+</head>
+<body>
+    <h1>Responsive Table</h1>
+
+    <p>
+        This Demo shows how to make tables responsive for different screen resolutions without hide columns using CSS and Media Queries.
+    </p>
+
+    <ul>
+      <li>assume each column width is 160px</li>
+      <li>floated columns at end</li>
+      <li>no javascript</li>
+      <li>use media queries for different viewport size</li>
+      <li>rem in media query based on default font size (1rem = 16px), even u set a <code>font-size</code> on <code>:root</code></li>
+      <li>use div as table</li>
+    </ul>
+
+    <div id="container">
+
+      <div class="table">
+        <div class="head">
+          <div class="row">
+            <div class="cell">Montag</div>
+            <div class="cell">Dienstag</div>
+            <div class="cell">Mittwoch</div>
+            <div class="cell">Donnerstag</div>
+            <div class="cell">Freitag</div>
+            <div class="cell">Samstag</div>
+            <div class="cell">Sonntag</div>
+          </div>
+        </div>
+
+        <div class="body">
+          <div class="row" data-title="KW 01">
+            <div class="cell">Frühstück bei Tiffany</div>
+            <div class="cell">150 kg</div>
+            <div class="cell">Fisch mit Soße</div>
+            <div class="cell">Grünkohl mit Pinke</div>
+            <div class="cell">100 Meter laufen</div>
+            <div class="cell" data-title="lisa">Grillabend mit Bekannten</div>
+            <div class="cell">Landwirtschaftssimulator spielen</div>
+          </div>
+  
+          <div class="row" data-title="KW 02">
+            <div class="cell">Frühstück bei Tiffany</div>
+            <div class="cell">100 Meter laufen</div>
+            <div class="cell">Grillabend mit Bekannten</div>
+            <div class="cell">Landwirtschaftssimulator spielen</div>
+            <div class="cell">150 kg</div>
+            <div class="cell">Fisch mit Soße</div>
+            <div class="cell">Grünkohl mit Pinke</div>
+          </div>
+  
+          <div class="row" data-title="KW 03">
+            <div class="cell">150 kg</div>
+            <div class="cell">Fisch mit Soße</div>
+            <div class="cell">Grünkohl mit Pinke</div>
+            <div class="cell">100 Meter laufen</div>
+            <div class="cell">Frühstück bei Tiffany</div>
+            <div class="cell">Grillabend mit Bekannten</div>
+            <div class="cell">Landwirtschaftssimulator spielen</div>
+          </div>
+  
+          <div class="row" data-title="KW 04">
+            <div class="cell">Grünkohl mit Pinke</div>
+            <div class="cell">100 Meter laufen</div>
+            <div class="cell">Landwirtschaftssimulator spielen</div>
+            <div class="cell">150 kg</div>
+            <div class="cell">Fisch mit Soße</div>
+            <div class="cell">Grillabend mit Bekannten</div>
+            <div class="cell">Frühstück bei Tiffany</div>
+          </div>
+        </div>
+
+      </div>
+  </div>
+
+</body>
+</html>

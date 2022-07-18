@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Responsive Table</title>
+</head>
+<body>
+    <h1>Responsive Table</h1>
+
+    <p>
+        This Demo shows how to make tables responsive for different screen resolutions without hide columns using the ResizeObserver and CSS.
+    </p>
+
+    <ul>
+      <li>assume each column width is 10rem</li>
+      <li>floated columns at end</li>
+      <li>observes the size of the container element and add css classes</li>
+      <li>javascript needed to take the width of the container through ResizeObserver</li>
+      <li>use html table</li>
+    </ul>
+
+    <div id="container">
+      <table>
+        <thead>
+          <tr>
+            <th>Montag</th>
+            <th>Dienstag</th>
+            <th>Mittwoch</th>
+            <th>Donnerstag</th>
+            <th>Freitag</th>
+            <th>Samstag</th>
+            <th>Sonntag</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr data-title="KW 01">
+            <td>Frühstück bei Tiffany</td>
+            <td>150 kg</td>
+            <td>Fisch mit Soße</td>
+            <td>Grünkohl mit Pinke</td>
+            <td>100 Meter laufen</td>
+            <td>Grillabend mit Bekannten</td>
+            <td>Landwirtschaftssimulator spielen</td>
+          </tr>
+
+          <tr data-title="KW 02">
+            <td>Frühstück bei Tiffany</td>
+            <td>100 Meter laufen</td>
+            <td>Grillabend mit Bekannten</td>
+            <td>Landwirtschaftssimulator spielen</td>
+            <td>150 kg</td>
+            <td>Fisch mit Soße</td>
+            <td>Grünkohl mit Pinke</td>
+          </tr>
+
+          <tr data-title="KW 03">
+            <td>150 kg</td>
+            <td>Fisch mit Soße</td>
+            <td>Grünkohl mit Pinke</td>
+            <td>100 Meter laufen</td>
+            <td>Frühstück bei Tiffany</td>
+            <td>Grillabend mit Bekannten</td>
+            <td>Landwirtschaftssimulator spielen</td>
+          </tr>
+
+          <tr data-title="KW 04">
+            <td>Grünkohl mit Pinke</td>
+            <td>100 Meter laufen</td>
+            <td>Landwirtschaftssimulator spielen</td>
+            <td>150 kg</td>
+            <td>Fisch mit Soße</td>
+            <td>Grillabend mit Bekannten</td>
+            <td>Frühstück bei Tiffany</td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+
+  <div id="message" style="font-size: 20pt; padding: 1rem">
+  </div>
+</body>
+</html>

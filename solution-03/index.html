@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive Table</title>
+</head>
+<body>
+    <h1>Responsive Table</h1>
+
+    <p>
+        This Demo shows how to make tables responsive for different screen resolutions without hide columns using CSS and Media Queries.
+    </p>
+
+    <ul>
+      <li>same as solution-02, but more columns</li>
+      <li>assume each column width is 160px</li>
+      <li>floated columns at end</li>
+      <li>no javascript</li>
+      <li>use media queries for different viewport size</li>
+      <li>rem in media query based on default font size (1rem = 16px), even u set a <code>font-size</code> on <code>:root</code></li>
+      <li>use div as table</li>
+    </ul>
+
+    <div id="container">
+
+      <div class="table">
+        <div class="head">
+          <div class="row">
+            <div class="cell">Bezeichnung</div>
+            <div class="cell">Vertrag</div>
+            <div class="cell">Von</div>
+            <div class="cell">Bis</div>
+            <div class="cell">KD-Nr</div>
+            <div class="cell">Name</div>
+            <div class="cell">Artikel-Nr</div>
+            <div class="cell">Artikel</div>
+            <div class="cell">Menge1</div>
+            <div class="cell">Menge2</div>
+            <div class="cell">Menge3</div>
+          </div>
+        </div>
+
+        <div class="body">
+          <div class="row" data-title="KW 01">
+            <div class="cell">Region Unter-Oberlingen-Süd</div>
+            <div class="cell">00025478</div>
+            <div class="cell">01.07.2022</div>
+            <div class="cell">31.08.2022</div>
+            <div class="cell">0000751458</div>
+            <div class="cell">Jo-Hannes Maria Klein</div>
+            <div class="cell">0000001548</div>
+            <div class="cell">Brechstangen</div>
+            <div class="cell">300 kg</div>
+            <div class="cell">58.458 kg</div>
+            <div class="cell">55 kg</div>
+          </div>
+  
+          <div class="row" data-title="KW 02">
+            <div class="cell">Region Unter-Oberlingen-Süd</div>
+            <div class="cell">00025478</div>
+            <div class="cell">01.07.2022</div>
+            <div class="cell">31.08.2022</div>
+            <div class="cell">0000751458</div>
+            <div class="cell">Jo-Hannes Maria Klein</div>
+            <div class="cell">0000001548</div>
+            <div class="cell">Brechstangen</div>
+            <div class="cell">300 kg</div>
+            <div class="cell">58.458 kg</div>
+            <div class="cell">55 kg</div>
+          </div>
+  
+          <div class="row" data-title="KW 03">
+            <div class="cell">Region Unter-Oberlingen-Süd</div>
+            <div class="cell">00025478</div>
+            <div class="cell">01.07.2022</div>
+            <div class="cell">31.08.2022</div>
+            <div class="cell">0000751458</div>
+            <div class="cell">Jo-Hannes Maria Klein</div>
+            <div class="cell">0000001548</div>
+            <div class="cell">Brechstangen</div>
+            <div class="cell">300 kg</div>
+            <div class="cell">58.458 kg</div>
+            <div class="cell">55 kg</div>
+          </div>
+
+          <div class="row" data-title="KW 04">
+            <div class="cell">Region Unter-Oberlingen-Süd</div>
+            <div class="cell">00025478</div>
+            <div class="cell">01.07.2022</div>
+            <div class="cell">31.08.2022</div>
+            <div class="cell">0000751458</div>
+            <div class="cell">Jo-Hannes Maria Klein</div>
+            <div class="cell">0000001548</div>
+            <div class="cell">Brechstangen</div>
+            <div class="cell">300 kg</div>
+            <div class="cell">58.458 kg</div>
+            <div class="cell">55 kg</div>
+          </div>
+        </div>
+
+      </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+:root {
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+:root {
+    --themecolor: rgb(42, 166, 28, .8);
+    --themecolor-secondary: rgba(146, 218, 138, 0.8);
+    --themecolor-text: #fff;
+
+    --rowcolor-odd: #e9e9e9;
+    --rowcolor-even: #f6f6f6;
+
+    --stackedcell-border-left: thin solid var(--themecolor-secondary);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 80rem;
+    overflow: auto;
+    border-radius: 4px;
+    border-bottom: 2px solid var(--themecolor);
+}
+
+#container .table {
+    margin: 0;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+#container .table .head {
+    display: table-header-group;
+}
+
+#container .table .body {
+    display: table-row-group;
+}
+
+#container .table .row {
+    display: table-row;
+}
+
+/* 
+Note: there is no nth-of-class()
+
+commonly written      interpreted as
+.cell:nth-child(2) -> :nth-child(2).cell
+
+so it is not the second child of class cell.
+it is the second child, and it must have the class cell.
+
+:is(.cell):nth-child() ... same think -> :nth-child():is(.cell)
+nth-child() operates on elements, not on classes.
+
+Safari supports
+:nth-child(2 of .cell)
+*/
+
+#container .table .body .row:nth-of-type(odd) {
+    background: var(--rowcolor-odd);
+}
+
+#container .table .body .row:nth-of-type(even) {
+    background: var(--rowcolor-even);
+}
+
+#container .table .head .row,
+#container .table .head .row > .cell {
+    color: var(--themecolor-text);
+    background-color: var(--themecolor);
+    font-weight: normal;
+    text-align: left;
+}
+
+#container .table .row > .cell {
+    padding: 6px 12px;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: table-cell;
+    max-width: 160px;
+}
+
+/* we use custom properties as inline header */
+#container .table .row > :nth-child(1) { --colheader: "Montag";     }
+#container .table .row > :nth-child(2) { --colheader: "Dienstag";   }
+#container .table .row > :nth-child(3) { --colheader: "Mittwoch";   }
+#container .table .row > :nth-child(4) { --colheader: "Donnerstag"; }
+#container .table .row > :nth-child(5) { --colheader: "Freitag";    }
+#container .table .row > :nth-child(6) { --colheader: "Samstag";    }
+#container .table .row > :nth-child(7) { --colheader: "Sonntag";    }
+
+/* show 5 + 1 */
+@media all and (max-width: calc(7 * 160px)) {
+    /* stack data cells at end */
+    #container .table .body .row > .cell:nth-child(5) ~ .cell {
+        display: block;
+        border-left: var(--stackedcell-border-left);
+    }
+
+    /* add inline header to stacked data cells */
+    #container .table .body .row > .cell:nth-child(5) ~ .cell::before {
+        display: block;
+        content: var(--colheader, attr(data-title));
+        color: var(--themecolor);
+    }
+
+    /* hide header cells at end, except last */
+    #container .table .head .row > .cell:nth-child(5) + .cell ~ .cell {
+        display: none;
+    }
+
+    /* hide text of last header cell */
+    #container .table .head .row > .cell:nth-child(5) + .cell  {
+        font-size: 0;
+    }
+}
+
+/* show 4 + 1 */
+@media all and (max-width: calc(6 * 160px)) {
+    /* stack data cells at end */
+    #container .table .body .row > .cell:nth-child(4) ~ .cell {
+        display: block;
+        border-left: var(--stackedcell-border-left);
+    }
+
+    /* add inline header to stacked data cells */
+    #container .table .body .row > .cell:nth-child(4) ~ .cell::before {
+        display: block;
+        content: var(--colheader, attr(data-title));
+        color: var(--themecolor);
+    }
+
+    /* hide header cells at end, except last */
+    #container .table .head .row > .cell:nth-child(4) + .cell ~ .cell {
+        display: none;
+    }
+
+    /* hide text of last header cell */
+    #container .table .head .row > .cell:nth-child(4) + .cell  {
+        font-size: 0;
+    }
+}
+
+/* show 3 + 1 */
+@media all and (max-width: calc(5 * 160px)) {
+    /* stack data cells at end */
+    #container .table .body .row > .cell:nth-child(3) ~ .cell {
+        display: block;
+        border-left: var(--stackedcell-border-left);
+    }
+
+    /* add inline header to stacked data cells */
+    #container .table .body .row > .cell:nth-child(3) ~ .cell::before {
+        display: block;
+        content: var(--colheader, attr(data-title));
+        color: var(--themecolor);
+    }
+
+    /* hide header cells at end, except last */
+    #container .table .head .row > .cell:nth-child(3) + .cell ~ .cell {
+        display: none;
+    }
+
+    /* hide text of last header cell */
+    #container .table .head .row > .cell:nth-child(3) + .cell  {
+        font-size: 0;
+    }
+}
+
+/* show 2 + 1 */
+@media all and (max-width: calc(4 * 160px)) {
+    /* stack data cells at end */
+    #container .table .body .row > .cell:nth-child(2) ~ .cell {
+        display: block;
+        border-left: var(--stackedcell-border-left);
+    }
+
+    /* add inline header to stacked data cells */
+    #container .table .body .row > .cell:nth-child(2) ~ .cell::before {
+        display: block;
+        content: var(--colheader, attr(data-title));
+        color: var(--themecolor);
+    }
+
+    /* hide header cells at end, except last */
+    #container .table .head .row > .cell:nth-child(2) + .cell ~ .cell {
+        display: none;
+    }
+
+    /* hide text of last header cell */
+    #container .table .head .row > .cell:nth-child(2) + .cell  {
+        font-size: 0;
+    }
+}
+
+/*
+    Smartphone
+    show all stacked
+*/
+
+@media all and (max-width: calc(3 * 160px)) {
+    /* stack all cells */
+    #container .table .row > .cell {
+        display: block;
+        border-left: var(--stackedcell-border-left);
+		max-width: 100%;
+    }
+
+    /* add inline header to all data cells */
+    #container .table .body .row > .cell::before {
+        display: block;
+        content: var(--colheader);
+        color: var(--themecolor);
+    }
+
+    /* hide all row-header cells */
+    #container .table .head .row > .cell {
+        display: none;
+    }
+
+    /* table caption */
+    #container .table .head .row::before {
+        content: "Responsive Table Demo";
+        padding: 6px 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+    }
+
+    /* show subtitles */
+    #container .table .body .row::before {
+        content: attr(data-title);
+        padding: 6px 12px;    
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        background-color: var(--themecolor-secondary);
+        border: 1px solid var(--themecolor);
+    }
+}
