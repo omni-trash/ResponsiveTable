@@ -1,3 +1,3 @@
-# Responsive Tables
+# Responsive Table
 
 what a mess
