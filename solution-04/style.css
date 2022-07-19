@@ -100,12 +100,30 @@
         width: calc(100% / 7);
         max-width: calc(100% / 7);
     }
+
+    #container .table .row > .cell:nth-child(7) ~ .cell {
+        font-size: .8em;
+        color: gray;
+    }
+
+    #container .table .row > .cell:nth-child(7) ~ .cell::before {
+        color: black;
+    }
 }
 
 @media all and (max-width: calc(7 * 160px)) {
     #container .table .row > .cell {
         width: calc(100% / 6);
         max-width: calc(100% / 6);
+    }
+
+    #container .table .row > .cell:nth-child(6) ~ .cell {
+        font-size: .8em;
+        color: gray;
+    }
+
+    #container .table .row > .cell:nth-child(6) ~ .cell::before {
+        color: black;
     }
 }
 
@@ -114,6 +132,15 @@
         width: calc(100% / 5);
         max-width: calc(100% / 5);
     }
+
+    #container .table .row > .cell:nth-child(5) ~ .cell {
+        font-size: .8em;
+        color: gray;
+    }
+
+    #container .table .row > .cell:nth-child(5) ~ .cell::before {
+        color: black;
+    }
 }
 
 @media all and (max-width: calc(5 * 160px)) {
@@ -121,12 +148,30 @@
         width: calc(100% / 4);
         max-width: calc(100% / 4);
     }
+
+    #container .table .row > .cell:nth-child(4) ~ .cell {
+        font-size: .8em;
+        color: gray;
+    }
+
+    #container .table .row > .cell:nth-child(4) ~ .cell::before {
+        color: black;
+    }
 }
 
 @media all and (max-width: calc(4 * 160px)) {
     #container .table .row > .cell {
         width: calc(100% / 3);
         max-width: calc(100% / 3);
+    }
+
+    #container .table .row > .cell:nth-child(3) ~ .cell {
+        font-size: .8em;
+        color: gray;
+    }
+
+    #container .table .row > .cell:nth-child(3) ~ .cell::before {
+        color: black;
     }
 }
 
@@ -138,6 +183,15 @@
     #container .table .row > .cell {
         width: calc(100% / 2);
         max-width: calc(100% / 2);
+    }
+
+    #container .table .row > .cell:nth-child(2) ~ .cell {
+        font-size: .8em;
+        color: gray;
+    }
+
+    #container .table .row > .cell:nth-child(2) ~ .cell::before {
+        color: black;
     }
 
     /* show subtitles */
