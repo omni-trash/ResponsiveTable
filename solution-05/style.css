@@ -5,14 +5,17 @@
 }
 
 :root {
-    --themecolor: rgb(216, 150, 26);
-    --themecolor-secondary: rgb(237, 219, 186);
+    --themecolor: rgb(216, 96, 26);
+    --themecolor-secondary: rgb(248, 175, 133);
     --themecolor-text: #fff;
 
     --rowcolor-odd: #e9e9e9;
     --rowcolor-even: #f6f6f6;
 
     --stackedcell-border-left: thin solid var(--themecolor-secondary);
+    --stackedcell-font-size: .9em;
+    --stackedcell-color: gray;
+    --stackedcell-title-color: rgb(83, 82, 82);
 }
 
 * {
@@ -105,12 +108,25 @@ all and (max-width: calc(9 * 160px)) {
     }
 
     #container .table .row > .cell:nth-child(8) ~ .cell {
-        font-size: .9em;
-        color: gray;
+        font-size: var(--stackedcell-font-size);
+        color: var(--stackedcell-color);
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        padding: .125em 0 .125em calc(100% / 8 + 12px);
+    }
+
+    #container .table .row > .cell:nth-child(8) ~ .cell:last-child {
+        padding-bottom: 6px;
     }
 
     #container .table .row > .cell:nth-child(8) ~ .cell::before {
-        color: black;
+        display: inline-block;
+        position: absolute;
+        width: calc(100% / 8);
+        max-width: calc(100% / 8);
+        margin-left: calc(-100% / 8);
+        color: var(--stackedcell-title-color);
     }
 }
 
@@ -121,12 +137,25 @@ all and (max-width: calc(9 * 160px)) {
     }
 
     #container .table .row > .cell:nth-child(7) ~ .cell {
-        font-size: .9em;
-        color: gray;
+        font-size: var(--stackedcell-font-size);
+        color: var(--stackedcell-color);
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        padding: .125em 0 .125em calc(100% / 7 + 12px);
+    }
+
+    #container .table .row > .cell:nth-child(7) ~ .cell:last-child {
+        padding-bottom: 6px;
     }
 
     #container .table .row > .cell:nth-child(7) ~ .cell::before {
-        color: black;
+        display: inline-block;
+        position: absolute;
+        width: calc(100% / 7);
+        max-width: calc(100% / 7);
+        margin-left: calc(-100% / 7);
+        color: var(--stackedcell-title-color);
     }
 }
 
@@ -137,12 +166,25 @@ all and (max-width: calc(9 * 160px)) {
     }
 
     #container .table .row > .cell:nth-child(6) ~ .cell {
-        font-size: .9em;
-        color: gray;
+        font-size: var(--stackedcell-font-size);
+        color: var(--stackedcell-color);
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        padding: .125em 0 .125em calc(100% / 6 + 12px);
+    }
+
+    #container .table .row > .cell:nth-child(6) ~ .cell:last-child {
+        padding-bottom: 6px;
     }
 
     #container .table .row > .cell:nth-child(6) ~ .cell::before {
-        color: black;
+        display: inline-block;
+        position: absolute;
+        width: calc(100% / 6);
+        max-width: calc(100% / 6);
+        margin-left: calc(-100% / 6);
+        color: var(--stackedcell-title-color);
     }
 }
 
@@ -153,12 +195,25 @@ all and (max-width: calc(9 * 160px)) {
     }
 
     #container .table .row > .cell:nth-child(5) ~ .cell {
-        font-size: .9em;
-        color: gray;
+        font-size: var(--stackedcell-font-size);
+        color: var(--stackedcell-color);
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        padding: .125em 0 .125em calc(100% / 5 + 12px);
+    }
+
+    #container .table .row > .cell:nth-child(5) ~ .cell:last-child {
+        padding-bottom: 6px;
     }
 
     #container .table .row > .cell:nth-child(5) ~ .cell::before {
-        color: black;
+        display: inline-block;
+        position: absolute;
+        width: calc(100% / 5);
+        max-width: calc(100% / 5);
+        margin-left: calc(-100% / 5);
+        color: var(--stackedcell-title-color);
     }
 }
 
@@ -169,12 +224,25 @@ all and (max-width: calc(9 * 160px)) {
     }
 
     #container .table .row > .cell:nth-child(4) ~ .cell {
-        font-size: .9em;
-        color: gray;
+        font-size: var(--stackedcell-font-size);
+        color: var(--stackedcell-color);
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        padding: .125em 0 .125em calc(100% / 4 + 12px);
+    }
+
+    #container .table .row > .cell:nth-child(4) ~ .cell:last-child {
+        padding-bottom: 6px;
     }
 
     #container .table .row > .cell:nth-child(4) ~ .cell::before {
-        color: black;
+        display: inline-block;
+        position: absolute;
+        width: calc(100% / 4);
+        max-width: calc(100% / 4);
+        margin-left: calc(-100% / 4);
+        color: var(--stackedcell-title-color);
     }
 }
 
@@ -185,18 +253,32 @@ all and (max-width: calc(9 * 160px)) {
     }
 
     #container .table .row > .cell:nth-child(3) ~ .cell {
-        font-size: .9em;
-        color: gray;
+        font-size: var(--stackedcell-font-size);
+        color: var(--stackedcell-color);
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        padding: .125em 0 .125em calc(100% / 3 + 12px);
+    }
+
+    #container .table .row > .cell:nth-child(3) ~ .cell:last-child {
+        padding-bottom: 6px;
     }
 
     #container .table .row > .cell:nth-child(3) ~ .cell::before {
-        color: black;
+        display: inline-block;
+        position: absolute;
+        width: calc(100% / 3);
+        max-width: calc(100% / 3);
+        margin-left: calc(-100% / 3);
+        color: var(--stackedcell-title-color);
     }
 }
 
 /*
     Smartphone
 */
+
 
 @media all and (max-width: calc(3 * 160px)) {
     #container .table .row > .cell {
@@ -205,18 +287,31 @@ all and (max-width: calc(9 * 160px)) {
     }
 
     #container .table .row > .cell:nth-child(2) ~ .cell {
-        font-size: .9em;
-        color: gray;
+        font-size: var(--stackedcell-font-size);
+        color: var(--stackedcell-color);
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        padding: .125em 0 .125em calc(100% / 2 + 12px);
+    }
+
+    #container .table .row > .cell:nth-child(2) ~ .cell:last-child {
+        padding-bottom: 6px;
     }
 
     #container .table .row > .cell:nth-child(2) ~ .cell::before {
-        color: black;
+        display: inline-block;
+        position: absolute;
+        width: calc(100% / 2);
+        max-width: calc(100% / 2);
+        margin-left: calc(-100% / 2);
+        color: var(--stackedcell-title-color);
     }
 
     /* show subtitles */
     #container .table .row::before {
         content: attr(data-title);
-        padding: 6px 12px;    
+        padding: 6px 12px;
         overflow: hidden;
         text-overflow: ellipsis;
         display: block;
@@ -231,5 +326,9 @@ all and (max-width: calc(9 * 160px)) {
     #container .table .row > .cell {
         width: 100%;
         max-width: 100%;
+    }
+
+    #container .table .row > .cell:last-child {
+        padding-bottom: 6px;
     }
 }
