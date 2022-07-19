@@ -1,0 +1,161 @@
+:root {
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+:root {
+    --themecolor: rgb(216, 150, 26);
+    --themecolor-secondary: rgb(237, 219, 186);
+    --themecolor-text: #fff;
+
+    --rowcolor-odd: #e9e9e9;
+    --rowcolor-even: #f6f6f6;
+
+    --stackedcell-border-left: thin solid var(--themecolor-secondary);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 80rem;
+    overflow: auto;
+    border-radius: 4px;
+    border-bottom: 2px solid var(--themecolor);
+}
+
+#container .table .caption {
+    background-color: var(--themecolor);
+    color: var(--themecolor-text);
+    padding: 6px 12px;
+}
+
+#container .table .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    border-bottom: 1px solid var(--themecolor);
+}
+
+#container .table .row:last-child {
+    border-bottom: none;
+}
+
+#container .table .row:nth-child(odd) {
+    background-color: var(--rowcolor-odd);
+}
+
+#container .table .row:nth-child(even) {
+    background-color: var(--rowcolor-even);
+}
+
+#container .table .row > .cell {
+    padding: 6px 12px;
+    width: 160px;
+    max-width: 160px;
+    flex-grow: 1;    
+    vertical-align: top;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    border-left: var(--stackedcell-border-left);
+}
+
+/* we use custom properties as inline header */
+#container .table .row > .cell:nth-child(1)  { --colheader: "Bezeichnung"; }
+#container .table .row > .cell:nth-child(2)  { --colheader: "Vertrag";     }
+#container .table .row > .cell:nth-child(3)  { --colheader: "Von";         }
+#container .table .row > .cell:nth-child(4)  { --colheader: "Bis";         }
+#container .table .row > .cell:nth-child(5)  { --colheader: "KD-Nr";       }
+#container .table .row > .cell:nth-child(6)  { --colheader: "Name";        }
+#container .table .row > .cell:nth-child(7)  { --colheader: "Artikel-Nr";  }
+#container .table .row > .cell:nth-child(8)  { --colheader: "Artikel";     }
+#container .table .row > .cell:nth-child(9)  { --colheader: "Menge1";      }
+#container .table .row > .cell:nth-child(10) { --colheader: "Menge2";      }
+#container .table .row > .cell:nth-child(11) { --colheader: "Menge3";      }
+
+/* add inline header to cells */
+#container .table .row > .cell:nth-child(1)::before,
+#container .table .row > .cell:nth-child(2)::before,
+#container .table .row > .cell:nth-child(3)::before,
+#container .table .row > .cell:nth-child(4)::before,
+#container .table .row > .cell:nth-child(5)::before,
+#container .table .row > .cell:nth-child(6)::before,
+#container .table .row > .cell:nth-child(7)::before,
+#container .table .row > .cell:nth-child(8)::before,
+#container .table .row > .cell:nth-child(9)::before,
+#container .table .row > .cell:nth-child(10)::before,
+#container .table .row > .cell:nth-child(11)::before {
+    display: block;
+    content: var(--colheader, attr(data-title));
+    color: var(--themecolor);
+}
+
+@media all and (max-width: calc(8 * 160px)) {
+    #container .table .row > .cell {
+        width: calc(100% / 7);
+        max-width: calc(100% / 7);
+    }
+}
+
+@media all and (max-width: calc(7 * 160px)) {
+    #container .table .row > .cell {
+        width: calc(100% / 6);
+        max-width: calc(100% / 6);
+    }
+}
+
+@media all and (max-width: calc(6 * 160px)) {
+    #container .table .row > .cell {
+        width: calc(100% / 5);
+        max-width: calc(100% / 5);
+    }
+}
+
+@media all and (max-width: calc(5 * 160px)) {
+    #container .table .row > .cell {
+        width: calc(100% / 4);
+        max-width: calc(100% / 4);
+    }
+}
+
+@media all and (max-width: calc(4 * 160px)) {
+    #container .table .row > .cell {
+        width: calc(100% / 3);
+        max-width: calc(100% / 3);
+    }
+}
+
+/*
+    Smartphone
+*/
+
+@media all and (max-width: calc(3 * 160px)) {
+    #container .table .row > .cell {
+        width: calc(100% / 2);
+        max-width: calc(100% / 2);
+    }
+
+    /* show subtitles */
+    #container .table .row::before {
+        content: attr(data-title);
+        padding: 6px 12px;    
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        background-color: var(--themecolor-secondary);
+        border: 1px solid var(--themecolor);
+        width: 100%;
+    }
+}
+
+@media all and (max-width: calc(2 * 160px)) {
+    #container .table .row > .cell {
+        width: 100%;
+        max-width: 100%;
+    }
+}
