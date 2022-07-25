@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Responsive Table</title>
+</head>
+<body>
+  <h1>Responsive Table</h1>
+
+  <p>
+      This Demo shows how to make tables responsive for different screen resolutions without hide columns using CSS and Media Queries.
+  </p>
+
+  <ul>
+    <li>layout based on real project</li>
+    <li>use grid layout</li>
+    <li>no javascript</li>
+    <li>use media queries for different viewport size</li>
+    <li>define the table layout with `grid-template-areas`</li>
+    <li>replacement for legacy multi table rendering</li>
+  </ul>
+
+  <div id="container">
+    <div class="table">
+      <div class="caption">Hofliste</div>
+      <div class="row">
+        <div class="data">
+          <div class="cell kfz">AB CD 556<div class="note">Zeit 10:19</div></div>
+          <div class="cell box">1011</div>
+          <div class="cell gos">6.2</div>
+          <div class="cell ann">02078040</div>
+          <div class="cell art">Bohnensaft</div>
+          <div class="cell rfi">552</div>
+          <div class="cell bem">Lieferung 2022</div>
+          <div class="cell qua q01">x10.1</div>
+          <div class="cell qua q02">x10.2</div>
+          <div class="cell qua q03">x10.3</div>
+          <div class="cell qua q04">x10.4</div>
+          <div class="cell qua q05">x10.5</div>
+          <div class="cell qua q06">x10.6</div>
+          <div class="cell qua q07">x10.7</div>
+          <div class="cell qua q08">x10.8</div>
+          <div class="cell qua q09">x10.8</div>
+          <div class="cell qua q10">x10.8</div>
+          <div class="cell qua q11">x10.8</div>
+          <div class="cell qua q12">x10.8</div>
+          <div class="cell qua q13">x10.8</div>
+          <div class="cell qua q14">x10.8</div>
+        </div>
+        <div class="menu na-status">
+          <div>
+            <button>Zuweisen</button>
+          </div>
+          <div>
+            <button disabled>Freigegeben</button>
+          </div>
+          <div class="status"><span></span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="data">
+          <div class="cell kfz">AB CD 556<div class="note">Zeit 10:19</div></div>
+          <div class="cell box">1011</div>
+          <div class="cell gos">6.2</div>
+          <div class="cell ann">02078040</div>
+          <div class="cell art">Bohnensaft</div>
+          <div class="cell rfi">552</div>
+          <div class="cell bem">Lieferung 2022</div>
+          <div class="cell qua q01">x10.1</div>
+          <div class="cell qua q02">x10.2</div>
+          <div class="cell qua q03">x10.3</div>
+          <div class="cell qua q04">x10.4</div>
+          <div class="cell qua q05">x10.5</div>
+          <div class="cell qua q06">x10.6</div>
+          <div class="cell qua q07">x10.7</div>
+          <div class="cell qua q08">x10.8</div>
+          <div class="cell qua q09">x10.8</div>
+          <div class="cell qua q10">x10.8</div>
+          <div class="cell qua q11">x10.8</div>
+          <div class="cell qua q12">x10.8</div>
+          <div class="cell qua q13">x10.8</div>
+          <div class="cell qua q14">x10.8</div>
+        </div>
+        <div class="menu freigegeben-status">
+          <div>
+            <button>Zuweisen</button>
+          </div>
+          <div>
+            <button disabled>Freigegeben</button>
+          </div>
+          <div class="status"><span></span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="data">
+          <div class="cell kfz">AB CD 556<div class="note">Zeit 10:19</div></div>
+          <div class="cell box">1011</div>
+          <div class="cell gos">6.2</div>
+          <div class="cell ann">02078040</div>
+          <div class="cell art">Bohnensaft</div>
+          <div class="cell rfi">552</div>
+          <div class="cell bem">Lieferung 2022</div>
+          <div class="cell qua q01">x10.1</div>
+          <div class="cell qua q02">x10.2</div>
+          <div class="cell qua q03">x10.3</div>
+          <div class="cell qua q04">x10.4</div>
+          <div class="cell qua q05">x10.5</div>
+          <div class="cell qua q06">x10.6</div>
+          <div class="cell qua q07">x10.7</div>
+          <div class="cell qua q08">x10.8</div>
+          <div class="cell qua q09">x10.8</div>
+          <div class="cell qua q10">x10.8</div>
+          <div class="cell qua q11">x10.8</div>
+          <div class="cell qua q12">x10.8</div>
+          <div class="cell qua q13">x10.8</div>
+          <div class="cell qua q14">x10.8</div>
+        </div>
+        <div class="menu na-status">
+          <div>
+            <button>Zuweisen</button>
+          </div>
+          <div>
+            <button disabled>Freigegeben</button>
+          </div>
+          <div class="status"><span></span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="data">
+          <div class="cell kfz">AB CD 556<div class="note">Zeit 10:19</div></div>
+          <div class="cell box">1011</div>
+          <div class="cell gos">6.2</div>
+          <div class="cell ann">02078040</div>
+          <div class="cell art">Bohnensaft</div>
+          <div class="cell rfi">552</div>
+          <div class="cell bem">Lieferung 2022</div>
+          <div class="cell qua q01">x10.1</div>
+          <div class="cell qua q02">x10.2</div>
+          <div class="cell qua q03">x10.3</div>
+          <div class="cell qua q04">x10.4</div>
+          <div class="cell qua q05">x10.5</div>
+          <div class="cell qua q06">x10.6</div>
+          <div class="cell qua q07">x10.7</div>
+          <div class="cell qua q08">x10.8</div>
+          <div class="cell qua q09">x10.8</div>
+          <div class="cell qua q10">x10.8</div>
+          <div class="cell qua q11">x10.8</div>
+          <div class="cell qua q12">x10.8</div>
+          <div class="cell qua q13">x10.8</div>
+          <div class="cell qua q14">x10.8</div>
+        </div>
+        <div class="menu gesperrt-status">
+          <div>
+            <button>Zuweisen</button>
+          </div>
+          <div>
+            <button disabled>Freigegeben</button>
+          </div>
+          <div class="status"><span></span></div>
+        </div>
+      </div>
+
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,363 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(11pt * .96);
+    color: #333;
+}
+
+:root {
+    --themecolor: rgb(164, 164, 164);
+    --themecolor-secondary: rgb(220, 214, 214);
+    --padding: 3px 6px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    max-width: 80em;
+    border-radius: 4px;
+    border-top: 1px solid var(--themecolor);
+    border-bottom: 2px solid var(--themecolor);
+}
+
+#container .table .caption {
+    background-color: var(--themecolor);
+    color: white;
+    text-align: left;
+    padding: var(--padding);
+}
+
+#container .table .row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    grid-template-areas: "menu data";
+    border-bottom: thin solid var(--themecolor);
+}
+
+#container .table .row:nth-child(odd) {
+    background-color: #f6f6f6;
+}
+
+#container .table .row:nth-child(even) {
+    background-color: #e9e9e9;
+}
+
+#container .table .row .data {
+    grid-area: data;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-areas:
+        "a a a b b b c c c d d d e e e"
+        "f f f g g g g g g g g g g g g"
+        "m n o p q r s t u v w x y z .";
+}
+
+#container .table .row .data .cell {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    text-align: left;
+    padding: var(--padding);
+    flex-grow: 1;
+    border-left: thin solid var(--themecolor-secondary);
+}
+
+#container .table .row .data .cell .note {
+    background-color: wheat;
+    padding: var(--padding);
+    padding-left: 0;
+}
+
+#container .table .row .menu {
+    grid-area: menu;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: var(--padding);
+}
+
+#container .table .row .menu button {
+    font-size: 12pt;
+    width: 100%;
+    height: 30pt;
+}
+
+#container .table .row .menu .status {
+    padding: var(--padding);
+    display: table;
+}
+
+#container .table .row .menu .status span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#container .table .row .menu.na-status {
+    background-color: rgb(236, 236, 198);
+}
+
+#container .table .row .menu.na-status .status {
+    color: rgba(175, 175, 61);
+}
+
+#container .table .row .menu.na-status .status span::before {
+    content: "nicht zugewiesen"
+}
+
+#container .table .row .menu.freigegeben-status {
+    background-color: #c6e7c6;
+}
+
+#container .table .row .menu.freigegeben-status .status {
+    color: #4c924c;
+}
+
+#container .table .row .menu.freigegeben-status .status span::before {
+    content: "freigegeben"
+}
+
+#container .table .row .menu.gesperrt-status {
+    background-color: #eacfcf;
+}
+
+#container .table .row .menu.gesperrt-status .status {
+    color: #925a4c;
+}
+
+#container .table .row .menu.gesperrt-status .status span::before {
+    content: "gesperrt"
+}
+
+#container .table .row .data .cell.kfz {
+    --caption: "Kennzeichen";
+}
+
+#container .table .row .data .cell.box {
+    --caption: "Box";
+}
+
+#container .table .row .data .cell.gos {
+    --caption: "Gosse";
+}
+
+#container .table .row .data .cell.ann {
+    --caption: "Annahme";
+}
+
+#container .table .row .data .cell.art {
+    --caption: "Artikel";
+}
+
+#container .table .row .data .cell.rfi {
+    --caption: "RFID";
+}
+
+#container .table .row .data .cell.bem {
+    --caption: "Bemerkung";
+}
+
+#container .table .row .data .cell.q01 {
+    --caption: "FEU";
+}
+
+#container .table .row .data .cell.q02 {
+    --caption: "PROT";
+}
+
+#container .table .row .data .cell.q03 {
+    --caption: "FZ";
+}
+
+#container .table .row .data .cell.q04 {
+    --caption: "HL";
+}
+
+#container .table .row .data .cell.q05 {
+    --caption: "FUS";
+}
+
+#container .table .row .data .cell.q06 {
+    --caption: "MK";
+}
+
+#container .table .row .data .cell.q07 {
+    --caption: "BK+SM";
+}
+
+#container .table .row .data .cell.q08 {
+    --caption: "SB";
+}
+
+#container .table .row .data .cell.q09 {
+    --caption: "AW";
+}
+
+#container .table .row .data .cell.q10 {
+    --caption: "BES";
+}
+
+#container .table .row .data .cell.q11 {
+    --caption: "FG";
+}
+
+#container .table .row .data .cell.q12 {
+    --caption: "AP";
+}
+
+#container .table .row .data .cell.q13 {
+    --caption: "VG";
+}
+
+#container .table .row .data .cell.q14 {
+    --caption: "ZEA";
+}
+
+#container .table .row .data .cell::before {
+    display: block;
+    content: var(--caption);
+    color: var(--themecolor);
+}
+
+#container .table .row .data .cell.kfz {
+    grid-area: a;
+}
+
+#container .table .row .data .cell.box {
+    grid-area: b;
+}
+
+#container .table .row .data .cell.gos {
+    grid-area: c;
+}
+
+#container .table .row .data .cell.ann {
+    grid-area: d;
+}
+
+#container .table .row .data .cell.rfi {
+    grid-area: e;
+}
+
+#container .table .row .data .cell.art {
+    grid-area: f;
+}
+
+#container .table .row .data .cell.bem {
+    grid-area: g;
+}
+
+#container .table .row .data .cell.q01 {
+    grid-area: m;
+}
+
+#container .table .row .data .cell.q02 {
+    grid-area: n;
+}
+
+#container .table .row .data .cell.q03 {
+    grid-area: o;
+}
+
+#container .table .row .data .cell.q04 {
+    grid-area: p;
+}
+
+#container .table .row .data .cell.q05 {
+    grid-area: q;
+}
+
+#container .table .row .data .cell.q06 {
+    grid-area: r;
+}
+
+#container .table .row .data .cell.q07 {
+    grid-area: s;
+}
+
+#container .table .row .data .cell.q08 {
+    grid-area: t;
+}
+
+#container .table .row .data .cell.q09 {
+    grid-area: u;
+}
+
+#container .table .row .data .cell.q10 {
+    grid-area: v;
+}
+
+#container .table .row .data .cell.q11 {
+    grid-area: w;
+}
+
+#container .table .row .data .cell.q12 {
+    grid-area: x;
+}
+
+#container .table .row .data .cell.q13 {
+    grid-area: y;
+}
+
+#container .table .row .data .cell.q14 {
+    grid-area: z;
+}
+
+@media screen and (max-width: 960px) {
+    #container .table .row .data {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas:
+            "a a b b c c d d"
+            "f f g g g g e e"
+            "m n o p q r s ."
+            "t u v w x y z .";
+    }
+}
+
+@media screen and (max-width: 740px) {
+    #container .table .row .data {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas:
+            "a b c d d"
+            "f g g e e"
+            "m n o p q"
+            "r s t u v"
+            "w x y z .";
+    }
+
+    #container .table .row {
+        grid-template-columns: 140px 1fr;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    #container .table .row .data {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "a a b b"
+            "f f d d"
+            "c c e e"
+            "g g g g"
+            "m n o p"
+            "q r s t"
+            "u v w x"
+            "y z . .";
+    }
+
+    #container .table .row {
+        grid-template-columns: 120px 1fr;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #container .table .row {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 160px;
+        grid-template-areas: 
+        "data"
+        "menu";
+        border: 4px solid var(--themecolor);
+        border-bottom: none;
+    }
+}
